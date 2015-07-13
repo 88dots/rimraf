@@ -34,3 +34,12 @@ command `rimraf <path>` which is useful for cross platform support.
 
 If you need to create a directory recursively, check out
 [mkdirp](https://github.com/substack/node-mkdirp).
+
+## Electron Usage
+Electron monkey-patches the `'fs'` module to support `.asar` archives - because of this any `'fs'` api calls to an `.asar` file (or even a file named `*.asar`) fail. In this case here, if you try to run `rimraf` from Electron on a folder containing an `.asar` file inside, the process will fail. In order to support this, we detect for `process.versions.electron` and `require('original-fs')`, an unmodified version of the `'fs'` library.
+
+More info:
+- https://github.com/88dots/extract-zip
+- https://github.com/atom/electron/issues/2035   **<= possible workaround**
+- https://github.com/atom/electron/issues/1658
+- https://github.com/atom/electron/issues/782
