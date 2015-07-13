@@ -3,7 +3,7 @@ rimraf.sync = rimrafSync
 
 var assert = require("assert")
 var path = require("path")
-var fs = require("fs")
+var fs = process.versions.electron ? require('original-fs') : require('fs')
 var glob = require("glob")
 
 var globOpts = {
