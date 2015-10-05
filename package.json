@@ -1,11 +1,11 @@
 {
-  "name": "rimraf",
+  "name": "@counterplay/rimraf",
   "version": "2.4.1",
   "main": "rimraf.js",
   "description": "A deep deletion module for node (like `rm -rf`)",
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
   "license": "ISC",
-  "repository": "git://github.com/isaacs/rimraf.git",
+  "repository": "github:88dots/rimraf",
   "scripts": {
     "test": "tap test/*.js"
   },
